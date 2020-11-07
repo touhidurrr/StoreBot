@@ -16,6 +16,7 @@ client.once('ready', () => {
 
 
 const Cmds = {
+  "test": "StoreBot is running!",
   "version": `Version ${version}`,
   "about": `StoreBot v ${version}\nAuthor: ${author}`,
   "list": "",
