@@ -15,9 +15,10 @@ var Cmds = new Map([
 ]);
 
 client.once('ready', () => {
+  var strr = "test";
     console.log('StoreBot is Ready!');
     console.log(Cmds);
-    console.log('test' in Cmds);
+    console.log(strr in Cmds);
 });
 
 client.on('message', msg => {
