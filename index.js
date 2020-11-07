@@ -15,15 +15,15 @@ client.once('ready', () => {
 });
 
 
-const Cmds = {
-  "test": "StoreBot is running!",
-  "version": `Version ${version}`,
-  "about": `StoreBot v ${version}\nAuthor: ${author}`,
-  "list": "",
-  "pricelist": "",
-  "help": "",
-  "buy": ""
-};
+const Cmds = new Map([
+  ["test", "StoreBot is running!"],
+  ["version", `Version $(version)`],
+  ["about", `StoreBot $(version)\nAuthor: $(author)`],
+  ["list", ""],
+  ["pricelist", ""],
+  ["help", ""],
+  ["buy", ""]
+]);
 
 
 client.on('message', msg => {
