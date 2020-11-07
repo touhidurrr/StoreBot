@@ -17,8 +17,8 @@ client.once('ready', () => {
 
 const Cmds = new Map([
   ["test", "StoreBot is running!"],
-  ["version", `Version $(version)`],
-  ["about", `StoreBot $(version)\nAuthor: $(author)`],
+  ["version", "Version " + version],
+  ["about", "StoreBot " + version + "\nAuthor: " + author],
   ["list", ""],
   ["pricelist", ""],
   ["help", ""],
