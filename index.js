@@ -31,7 +31,7 @@ client.on('message', msg => {
     if(!msg.content.startsWith(pre) || msg.author.bot) return;
 
     var str = msg.content.slice(1);
-    console.log(`${msg.author.user}: ${str}`);
+    console.log(`${msg.author.username}: ${str}`);
     arg = str.toLowerCase().split(/ +/);
 
     if(Cmds.has(arg[0])) {
