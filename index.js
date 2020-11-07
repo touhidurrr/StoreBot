@@ -4,7 +4,7 @@ const {author, help, error, pre, pricelist} = require('./info.json');
 
 const client = new Discord.Client();
 
-const Cmds = new Map([
+var Cmds = new Map([
   ['test', 'StoreBot is running!'],
   ['version', 'Version ' + version],
   ['about', 'StoreBot ' + version + '\nAuthor: ' + author],
