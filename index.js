@@ -30,9 +30,9 @@ client.on('message', msg => {
 
     if(!msg.content.startsWith(pre) || msg.author.bot) return;
 
-    var str = msg.content;
+    var str = msg.content.slice(1);
     console.log(`${msg.author.user}: ${str}`);
-    arg = str.toLowerCase().slice(1).split(/ +/);
+    arg = str.toLowerCase().split(/ +/);
 
     if(Cmds.has(arg[0])) {
       msg.channel.send(Cmds.get(arg[0]));
