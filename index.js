@@ -10,7 +10,7 @@ const Cmds = new Map([
   ['about', 'StoreBot ' + version + '\nAuthor: ' + author],
   //['list', ''],
   //['pricelist', ''],
-  ['help', 'StoreBot v' + version + help.join()],
+  ['help', 'StoreBot v' + version + help.join('')],
   //['buy', '']
 ]);
 
