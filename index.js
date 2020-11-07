@@ -4,13 +4,6 @@ const {author, help, error, pre, pricelist} = require('./info.json');
 
 const client = new Discord.Client();
 
-var arg;
-
-client.once('ready', () => {
-    console.log('StoreBot is Ready!');
-});
-
-
 const Cmds = new Map([
   ['test', 'StoreBot is running!'],
   ['version', 'Version ' + version],
@@ -21,14 +14,19 @@ const Cmds = new Map([
   //['buy', '']
 ]);
 
+client.once('ready', () => {
+    console.log('StoreBot is Ready!');
+    console.log(Comds);
+    console.log('test' in Cmds);
+});
 
 client.on('message', msg => {
 
     if(!msg.content.startsWith(pre) || msg.author.bot) return;
 
-    var str = msg.content.slice(1);
+    const str = msg.content.slice(1);
     console.log(`${msg.author.username}: ${str}`);
-    arg = str.toLowerCase().split(/ +/);
+    const arg = str.toLowerCase().split(/ +/);
 
     if(arg[0] in Cmds) {
       msg.channel.send(Cmds.get(arg[0]));
