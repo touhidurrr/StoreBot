@@ -19,10 +19,10 @@ const Cmds = new Map([
   ["test", "StoreBot is running!"],
   ["version", "Version " + version],
   ["about", "StoreBot " + version + "\nAuthor: " + author],
-  ["list", ""],
-  ["pricelist", ""],
-  ["help", ""],
-  ["buy", ""]
+  //["list", ""],
+  //["pricelist", ""],
+  ["help", "StoreBot v" + version + "\nThe bot is on pre-Alpha testing stage.\nAvailable commands: help, test, version, about."],
+  //["buy", ""]
 ]);
 
 
