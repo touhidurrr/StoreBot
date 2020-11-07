@@ -37,7 +37,7 @@ client.on('message', msg => {
     if(Cmds.has(arg[0])) {
       msg.channel.send(Cmds.get(arg[0]));
     } else {
-      msg.channel.send(`${msg.author.username} said: ${str}`);
+      msg.channel.send(`${msg.author} said: ${str}`);
     }
 
 });
