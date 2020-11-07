@@ -34,7 +34,7 @@ client.on('message', msg => {
     console.log(`${msg.author.username}: ${str}`);
     arg = str.toLowerCase().slice(1).split(/ +/);
 console.log(Cmds.get(arg[0]));
-console.loh(arg[0] in Cmds);
+console.log(arg[0] in Cmds);
 
     if(arg[0] in Cmds) {
       msg.channel.send(Cmds.get(arg[0]));
