@@ -27,7 +27,7 @@ client.on('message', msg => {
     const arg = str.toLowerCase().split(/ +/);
     const fir = arg[0];
 
-    if(Cmds.has(fir) {
+    if(Cmds.has(fir)) {
       msg.channel.send(Cmds.get(fir));
     } else {
       msg.channel.send(`${msg.author} said: ${str}`);
