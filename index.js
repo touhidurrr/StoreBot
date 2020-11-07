@@ -16,7 +16,7 @@ const Cmds = new Map([
 
 client.once('ready', () => {
     console.log('StoreBot is Ready!');
-    console.log(Comds);
+    console.log(Cmds);
     console.log('test' in Cmds);
 });
 
