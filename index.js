@@ -35,7 +35,7 @@ client.on('message', msg => {
     arg = str.toLowerCase().slice(1).split(/ +/);
 
     if(arg[0] in Cmds) {
-      msg.channel.send(Cmds[arg[0]]);
+      msg.channel.send(Cmds.get(arg[0]));
     } else {
       msg.channel.send(`${msg.author.username} said: ${str}`);
     }
