@@ -1,6 +1,14 @@
 const Discord = require('discord.js');
-const {version} = require('./package.json');
-const {author, help, error, pre, pricelist} = require('./info.json');
+const {
+  version
+} = require('./package.json');
+const {
+  author,
+  help,
+  error,
+  pre,
+  pricelist
+} = require('./info.json');
 
 const client = new Discord.Client();
 
@@ -15,24 +23,26 @@ const Cmds = new Map([
 ]);
 
 client.once('ready', () => {
-    console.log('StoreBot is Ready!');
+  console.log('StoreBot is Ready!');
 });
 
 client.on('message', msg => {
+  var st = new Date().getTime();
+  if (!msg.content.startsWith(pre) || msg.author.bot) return;
 
-    if(!msg.content.startsWith(pre) || msg.author.bot) return;
+  const str = msg.content.slice(1);
+  console.log(`${msg.author.username}: ${str}`);
+  const arg = str.toLowerCase().split(/ +/);
+  const fir = arg[0];
 
-    const str = msg.content.slice(1);
-    console.log(`${msg.author.username}: ${str}`);
-    const arg = str.toLowerCase().split(/ +/);
-    const fir = arg[0];
-
-    if(Cmds.has(fir)) {
-      msg.channel.send(Cmds.get(fir));
-    } else {
-      msg.channel.send(`${msg.author} said: ${str}`);
-    }
-
+  if (Cmds.has(fir)) {
+    msg.channel.send(Cmds.get(fir));
+  } else {
+    msg.channel.send(`${msg.author} said: ${str}`);
+  }
+  var ed = new Date().getTime();
+  console.log(`processing time for ${fir} is ${ed-st}ms`);
+  msg.channel.send(`processed at ${ed-st}ms`);
 });
 
 

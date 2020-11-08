@@ -1,6 +1,6 @@
 {
   "name": "storebot",
-  "version": "1.0.19",
+  "version": "1.0.20-dev",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,8 @@
   "author": "Md. Touhidur Rahman",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.x"
+    "discord.js": "^12.x",
+    "googleapis": "^64.x"
   },
   "engines": {
     "node": "15.x",
