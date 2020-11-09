@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const secrets = require('./secrets.json');
 const {
   version
 } = require('./package.json');
@@ -46,4 +47,4 @@ client.on('message', msg => {
 });
 
 
-client.login('Nzc0MzIxMzkzNjM0MTE1NjA2.X6WE_g.V6_rMfNAbEroYj5FmMD5MKao7Zw');
+client.login(secrets.discord.token);
