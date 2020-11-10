@@ -36,7 +36,16 @@ client.on('message', msg => {
   const arg = str.toLowerCase().split(/ +/);
   const fir = arg[0];
 
-  if (Cmds.has(fir)) {
+  if (fir == 'announce' && msg.author.toString() == author) {
+    if(arg.length < 3) {
+      msg.channel.send('This command should have at least 3 arguments.');
+    } else
+    client.channels.cache
+    .find(channel => channel.name === arg[1])
+    .send(arg.slice(2).join(' '));
+  }
+  
+  else if (Cmds.has(fir)) {
     msg.channel.send(Cmds.get(fir));
   } else {
     msg.channel.send(`${msg.author} said: ${str}`);

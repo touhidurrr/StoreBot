@@ -1,6 +1,6 @@
 {
   "name": "storebot",
-  "version": "1.0.21-dev",
+  "version": "1.0.22-dev",
   "description": "",
   "main": "index.js",
   "scripts": {
