@@ -45,7 +45,7 @@ client.on('message', msg => {
     .send(arg.slice(2).join(' '));
   }
   
-  else if (fir in Cmds) {
+  else if (Cmds.has(fir)) {
     msg.channel.send(Cmds.get(fir));
   } else {
     msg.channel.send(`${msg.author} said: ${str}`);
