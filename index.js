@@ -1,3 +1,5 @@
+'use strict';
+
 const Discord = require('discord.js');
 const secrets = require('./secrets.json');
 const {
