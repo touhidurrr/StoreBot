@@ -53,7 +53,7 @@ client.on('message', msg => {
     msg.channel.send(`${msg.author} said: ${str}`);
   }
   
-  console.log(`processing time for ${fir} is ${Date().getTime()-st}ms`);
+  console.log(`processing time for ${fir} is ${Date().getTime()-t}ms`);
   msg.channel.send(`processed at ${ed-st}ms`);
 });
 
