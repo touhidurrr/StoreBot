@@ -30,7 +30,7 @@ client.once('ready', () => {
 });
 
 client.on('message', msg => {
-  var st = new Date().getTime();
+  let st = new Date().getTime();
   if (!msg.content.startsWith(pre) || msg.author.bot) return;
 
   const str = msg.content.slice(1);
@@ -52,7 +52,7 @@ client.on('message', msg => {
   } else {
     msg.channel.send(`${msg.author} said: ${str}`);
   }
-  var ed = new Date().getTime();
+  let ed = new Date().getTime();
   console.log(`processing time for ${fir} is ${ed-st}ms`);
   msg.channel.send(`processed at ${ed-st}ms`);
 });
