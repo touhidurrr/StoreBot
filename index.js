@@ -1,10 +1,10 @@
 'use strict';
 
+const startTime = new Date();
+
 const Discord = require('discord.js');
 const secrets = require('./secrets.json');
-const {
-  version
-} = require('./package.json');
+const { version } = require('./package.json');
 const {
   author,
   help,
@@ -14,6 +14,15 @@ const {
 } = require('./info.json');
 
 const client = new Discord.Client();
+
+async function status() {
+  let t = new Date() - startTime;
+  let s = 'Running for ';
+  if (t > 86399) s += `${t/86400}d `;
+  if (t > 3599) s += `${t/3600}m `;
+  s += `${t}s`;
+  return s;
+}
 
 const Cmds = new Map([
   ['test', 'StoreBot is running!'],
@@ -45,6 +54,10 @@ client.on('message', msg => {
     client.channels.cache
     .find(channel => channel.name === arg[1])
     .send(arg.slice(2).join(' '));
+  }
+  
+  else if(fir == 'status') {
+    msg.send(status());
   }
   
   else if (Cmds.has(fir)) {
