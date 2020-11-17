@@ -57,7 +57,7 @@ client.on('message', msg => {
   }
   
   else if(fir == 'status') {
-    msg.send(status());
+    msg.channel.send(status());
   }
   
   else if (Cmds.has(fir)) {
