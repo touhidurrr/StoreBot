@@ -36,7 +36,7 @@ const Cmds = new Map([
 
 client.once('ready', () => {
   console.log('StoreBot is Ready!');
-  console.log(status());
+  console.log(stat());
 });
 
 client.on('message', msg => {
