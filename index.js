@@ -19,9 +19,10 @@ async function stat() {
   let t = new Date() - startTime;
   let s = 'Running for ';
   if (t > 86399) s += `${t/86400}d `;
-  if (t > 3599) s += `${t/3600}m `;
+  if (t > 3599) s += `${t/3600}h `;
+  if (t > 3599) s += `${t/3600}h `;
   s += `${t}s`;
-  return s;
+  return String(s);
 }
 
 const Cmds = new Map([
