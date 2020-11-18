@@ -15,7 +15,7 @@ const {
 
 const client = new Discord.Client();
 
-async function status() {
+async function stat() {
   let t = new Date() - startTime;
   let s = 'Running for ';
   if (t > 86399) s += `${t/86400}d `;
@@ -36,6 +36,7 @@ const Cmds = new Map([
 
 client.once('ready', () => {
   console.log('StoreBot is Ready!');
+  console.log(status());
 });
 
 client.on('message', msg => {
@@ -57,7 +58,7 @@ client.on('message', msg => {
   }
   
   else if(fir == 'status') {
-    msg.channel.send(status());
+    msg.channel.send(stat());
   }
   
   else if (Cmds.has(fir)) {
