@@ -15,14 +15,26 @@ const {
 
 const client = new Discord.Client();
 
-async function stat() {
-  let t = new Date() - startTime;
+function stat() {
   let s = 'Running for ';
-  if (t > 86399) s += `${t/86400}d `;
-  if (t > 3599) s += `${t/3600}h `;
-  if (t > 3599) s += `${t/3600}h `;
-  s += `${t}s`;
-  return String(s);
+  let t = new Date() - startTime;
+  if (t >= 86400000) {
+    let d = Math.floor(t / 86400000);
+    t -= d * 86400000;
+    s += d + ' day' + ((d > 1) ? 's ' : ' ');
+  } if (t >= 3600000) {
+    let h = Math.floor(t / 3600000);
+    t -= h * 3600000;
+    s += h + ' hour' + ((h > 1) ? 's ' : ' ');
+  } if (t >= 60000) {
+    let m = Math.floor(t / 60000);
+    t -= m * 60000;
+    s += m + ' miniute' + ((m > 1) ? 's ' : ' ');
+  } if (t >= 1000) {
+    let se = t / 1000;
+    s += se + ' second' + ((se > 1) ? 's' : '');
+  }
+  return s;
 }
 
 const Cmds = new Map([
