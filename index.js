@@ -64,7 +64,6 @@ const client = new Discord.Client();
 
 client.once('ready', () => {
   console.log('StoreBot is Ready!');
-  console.log(stat());
 });
 
 client.on('message', msg => {
@@ -76,7 +75,7 @@ client.on('message', msg => {
   const arg = str.toLowerCase().split(/ +/);
   const fir = arg[0];
 
-  if (msg.author === author) {
+  if (msg.author.toString() === author) {
     if (fir == 'announce'){
       if(arg.length < 3) {
         msg.channel.send('This command should have at least 3 arguments.');
