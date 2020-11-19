@@ -3,13 +3,12 @@
     "author": "<@577491473100963840>",
     "error": "No such command. See help.\nType `!help`",
     "help": [
-        "\nThis bot is currently on pre-Alpha testing stage.",
-        "\nAvailable Commands:",
-        "\n`!help` => Prints this message.",
-        "\n`!test` => Test if the bot is operational.",
-        "\n`!about` => Know about the bot.",
-        "\n`!version` => Know bot version.",
-        "\n`!status` => Know bot runtime status."
+        "This bot is still in development stage. Commands available for testers,",
+        "\n`!help` Prints this message.",
+        "\n`!test` Test if the bot is operational.",
+        "\n`!about` Know about the bot.",
+        "\n`!version` Know bot version.",
+        "\n`!status` Know bot runtime status."
     ],
     "pricelist": ""
 }
