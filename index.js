@@ -5,15 +5,28 @@ const startTime = new Date();
 const Discord = require('discord.js');
 const secrets = require('./secrets.json');
 const { version } = require('./package.json');
-const {
-  author,
-  help,
-  error,
-  pre,
-  pricelist
-} = require('./info.json');
+const { author, help, error, pre, pricelist } = require('./info.json');
 
-const client = new Discord.Client();
+const helpEmbed = {
+  color: 0x0eab28,
+  title: 'StoreBot Help',
+  author: {
+    name: 'StoreBot',
+    icon_url: 'https://s8.gifyu.com/images/rBt.png',
+  },
+  description: 'This is the help page of StoreBot that list multiple usefull commands. To reach this page type **!help**.',
+  thumbnail: {
+    url: 'https://s8.gifyu.com/images/help-3.png',
+  },
+  fields: {
+    name: 'Commands list',
+    value: help.join(''),
+  },
+  timestamp: new Date(),
+  footer: {
+    text: '© PremiumBD ',
+  },
+};
 
 function stat() {
   let s = 'Running for ';
@@ -43,9 +56,11 @@ const Cmds = new Map([
   ['about', 'StoreBot ' + version + '\nAuthor: ' + author],
   //['list', ''],
   //['pricelist', ''],
-  ['help', 'StoreBot v' + version + help.join('')],
+  ['help', { embed: helpEmbed }],
   //['buy', '']
 ]);
+
+const client = new Discord.Client();
 
 client.once('ready', () => {
   console.log('StoreBot is Ready!');
@@ -61,13 +76,16 @@ client.on('message', msg => {
   const arg = str.toLowerCase().split(/ +/);
   const fir = arg[0];
 
-  if (fir == 'announce' && msg.author.toString() == author) {
-    if(arg.length < 3) {
-      msg.channel.send('This command should have at least 3 arguments.');
-    } else
-    client.channels.cache
-    .find(channel => channel.name === arg[1])
-    .send(arg.slice(2).join(' '));
+  if (msg.author === author) {
+    if (fir == 'announce'){
+      if(arg.length < 3) {
+        msg.channel.send('This command should have at least 3 arguments.');
+      } else {
+        client.channels.cache
+          .find(channel => channel.name === arg[1])
+          .send(arg.slice(2).join(' '));
+      }
+    }
   }
   
   else if(fir == 'status') {
