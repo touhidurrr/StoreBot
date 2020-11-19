@@ -75,16 +75,13 @@ client.on('message', msg => {
   const arg = str.toLowerCase().split(/ +/);
   const fir = arg[0];
 
-  if (msg.author.toString() === author) {
-    if (fir == 'announce'){
-      if(arg.length < 3) {
-        msg.channel.send('This command should have at least 3 arguments.');
-      } else {
-        client.channels.cache
-          .find(channel => channel.name === arg[1])
-          .send(arg.slice(2).join(' '));
-      }
-    }
+  if (fir == 'announce' && msg.author.toString() == author) {
+    if(arg.length < 3)
+      msg.channel.send('This command should have at least 3 arguments.');
+    else
+      client.channels.cache
+        .find(channel => channel.name === arg[1])
+        .send(arg.slice(2).join(' '));
   }
   
   else if(fir == 'status') {
