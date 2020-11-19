@@ -1,14 +1,14 @@
 {
-    "pre": "!",
-    "author": "<@577491473100963840>",
-    "error": "No such command. See help.\nType `!help`",
-    "help": [
-        "This bot is still in development stage. Commands available for testers,",
-        "\n`!help` Prints this message.",
-        "\n`!test` Test if the bot is operational.",
-        "\n`!about` Know about the bot.",
-        "\n`!version` Know bot version.",
-        "\n`!status` Know bot runtime status."
-    ],
-    "pricelist": ""
+  "pre": "!",
+  "author": "<@577491473100963840>",
+  "error": "No such command. See help.\nType `!help`",
+  "help": [
+    "This bot is still in development stage. Available commands,",
+    "\n`!help` Prints this message.",
+    "\n`!test` Test if the bot is operational.",
+    "\n`!about` Know about the bot.",
+    "\n`!version` Know bot version.",
+    "\n`!status` Know bot runtime status."
+  ],
+  "pricelist": ""
 }
