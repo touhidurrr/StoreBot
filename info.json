@@ -4,11 +4,11 @@
   "error": "No such command. See help.\nType `!help`",
   "help": [
     "This bot is still in development stage. Available commands,",
-    "\n`!help` Prints this message.",
-    "\n`!test` Test if the bot is operational.",
-    "\n`!about` Know about the bot.",
-    "\n`!version` Know bot version.",
-    "\n`!status` Know bot runtime status."
+    "\n`?help` Prints this message.",
+    "\n`?test` Test if the bot is operational.",
+    "\n`?about` Know about the bot.",
+    "\n`?version` Know bot version.",
+    "\n`?status` Know bot runtime status."
   ],
   "pricelist": ""
 }
