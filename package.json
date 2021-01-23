@@ -10,7 +10,8 @@
   "author": "Md. Touhidur Rahman",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.x"
+    "discord.js": "^12.x",
+    "googleapis": "^39.x"
   },
   "engines": {
     "node": "15.x",
