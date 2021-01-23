@@ -1,2 +1,2 @@
 Worker: node index.js
-Worker: mom start
+Worker: npm start
